@@ -1,0 +1,18 @@
+---
+Name: blog_shared_categorisation
+---
+BlogCategory:
+    extensions:
+        - BlogCategorySharedCategoriesExtension
+        
+BlogTag:
+    extensions:
+        - BlogTagSharedCategoriesExtension
+
+Blog:
+  extensions:
+    - BlogSharedCategoriesExtension
+
+BlogPost:
+  extensions:
+    - BlogPostSharedCategoriesExtension
