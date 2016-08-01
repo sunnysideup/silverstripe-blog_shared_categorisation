@@ -1,0 +1,23 @@
+{
+    "name": "sunnysideup/blog_shared_categorisation",
+    "type": "silverstripe-module",
+    "description": "Adds shared categorisation to the Silverstripe Blog.",
+    "keywords": ["blog", "tag", "tags", "categorisation", "categorisations", "taxonomy", "grouping", "many blogs"],
+    "license": "Sunny Side Up (BSD-3-Clause and CUSTOM)",
+    "authors":[
+        {
+            "name": "Nicolaas Francken",
+            "homepage": "https://github.com/sunnysideup",
+            "email" : "modules@sunnysideup.co.nz",
+            "role" : "lead developer"
+        }
+    ],
+    "require":{
+        "silverstripe/framework": "^3.4",
+        "silverstripe/blog": "*"
+    },
+    "extra": {
+        "installer-name": "blog_shared_categorisation"
+    }
+
+}
