@@ -3,6 +3,9 @@
     "type": "silverstripe-module",
     "description": "Adds shared categorisation to the Silverstripe Blog.",
     "keywords": [
+        "Silverstripe-CMS",
+        "CMS",
+        "Silverstripe",
         "blog",
         "tag",
         "tags",
@@ -21,8 +24,9 @@
         }
     ],
     "require": {
-        "silverstripe/framework": "^3.4",
-        "silverstripe/blog": "*"
+        "silverstripe/framework": "~3.1",
+        "silverstripe/blog": "*",
+        "silverstripe/cms": "~3.1"
     },
     "extra": {
         "installer-name": "blog_shared_categorisation"
