@@ -3,16 +3,14 @@
 
 /**
  * extends BlogCategory
- * 
- */  
+ *
+ */
 
 
 class BlogCategorySharedCategoriesExtension extends DataExtension
 {
-
-    
-    function onBeforeWrite(){
+    public function onBeforeWrite()
+    {
         $this->BlogID = 0;
     }
-
 }

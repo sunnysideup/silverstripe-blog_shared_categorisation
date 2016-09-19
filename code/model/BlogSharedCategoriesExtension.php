@@ -2,14 +2,14 @@
 
 /**
  * extends Blog
- * 
- */  
+ *
+ */
 
 
 class BlogSharedCategoriesExtension extends DataExtension
 {
-
-    function updateCMSFields(FieldList $fields) {
+    public function updateCMSFields(FieldList $fields)
+    {
         $fields->removeByName("Categories");
         $fields->removeByName("Tags");
         $fields->addFieldsToTab(
@@ -33,18 +33,18 @@ class BlogSharedCategoriesExtension extends DataExtension
                     GridFieldConfig_RecordEditor ::create()
                 )
             )
-        );        
+        );
     }
 
     /**
      *
      * @return DataList
      */
-    function UsedCategories()
+    public function UsedCategories()
     {
         $categories = BlogCategory::get();
-        foreach($categories as $category) {
-            if($category->BlogPosts()->count() == 0) {
+        foreach ($categories as $category) {
+            if ($category->BlogPosts()->count() == 0) {
                 $categories = $categories->exclude(array('BlogCategory.ID' => $category->ID));
             }
         }
@@ -57,11 +57,11 @@ class BlogSharedCategoriesExtension extends DataExtension
      *
      * @return DataList
      */
-    function UsedTags()
+    public function UsedTags()
     {
         $tags = BlogTag::get();
-        foreach($tags as $tag) {
-            if($tag->BlogPosts()->count() == 0) {
+        foreach ($tags as $tag) {
+            if ($tag->BlogPosts()->count() == 0) {
                 $tags = $tags->exclude(array('BlogTag.ID' => $tag->ID));
             }
         }
@@ -75,7 +75,7 @@ class BlogSharedCategoriesExtension extends DataExtension
      *
      * @return DataList
      */
-    function Tags()
+    public function Tags()
     {
         return BlogTag::get();
     }
@@ -86,7 +86,7 @@ class BlogSharedCategoriesExtension extends DataExtension
      *
      * @return DataList
      */
-    function Categories()
+    public function Categories()
     {
         return BlogCategory::get();
     }
@@ -97,7 +97,7 @@ class BlogSharedCategoriesExtension extends DataExtension
      *
      * @return DataList
      */
-    function getTags()
+    public function getTags()
     {
         return BlogTag::get();
     }
@@ -108,11 +108,8 @@ class BlogSharedCategoriesExtension extends DataExtension
      *
      * @return DataList
      */
-    function getCategories()
+    public function getCategories()
     {
         return BlogCategory::get();
     }
-
-
-
 }

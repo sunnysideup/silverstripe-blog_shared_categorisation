@@ -1,8 +1,8 @@
 <?php
 /**
  * extends BlogTags
- * 
- */  
+ *
+ */
 class BlogTagSharedCategoriesExtension extends DataExtension
 {
 
@@ -13,7 +13,7 @@ class BlogTagSharedCategoriesExtension extends DataExtension
      *
      * @return DataList
      */
-    function UsedCategories()
+    public function UsedCategories()
     {
         return $this->owner->Parent()->UsedCategories();
     }
@@ -24,7 +24,7 @@ class BlogTagSharedCategoriesExtension extends DataExtension
      *
      * @return DataList
      */
-    function UsedTags()
+    public function UsedTags()
     {
         return $this->owner->Parent()->UsedTags();
     }
@@ -44,7 +44,7 @@ class BlogTagSharedCategoriesExtension extends DataExtension
                 BlogCategory::get()->map("ID", "Title"),
                 $this->owner->Categories()
             )
-        );      */  
+        );      */
 
         return $fields;
     }

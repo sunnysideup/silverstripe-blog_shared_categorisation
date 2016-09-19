@@ -2,8 +2,8 @@
 
 /**
  * extends BlogPost
- * 
- */  
+ *
+ */
 
 class BlogPostSharedCategoriesExtension extends DataExtension
 {
@@ -14,7 +14,7 @@ class BlogPostSharedCategoriesExtension extends DataExtension
      *
      * @return DataList
      */
-    function UsedCategories()
+    public function UsedCategories()
     {
         return $this->owner->Parent()->UsedCategories();
     }
@@ -25,7 +25,7 @@ class BlogPostSharedCategoriesExtension extends DataExtension
      *
      * @return DataList
      */
-    function UsedTags()
+    public function UsedTags()
     {
         return $this->owner->Parent()->UsedTags();
     }
@@ -36,7 +36,6 @@ class BlogPostSharedCategoriesExtension extends DataExtension
      */
     public function updateCMSFields(FieldList $fields)
     {
-
         $fields->replaceField(
             "Categories",
             CheckboxSetField::create(
@@ -54,8 +53,7 @@ class BlogPostSharedCategoriesExtension extends DataExtension
                 BlogTag::get()->sort(array('Title'=>'ASC'))->map("ID", "Title"),
                 $this->owner->Tags()
             )
-        );        
+        );
         return $fields;
     }
-
 }
