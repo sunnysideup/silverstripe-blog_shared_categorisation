@@ -7,7 +7,6 @@
 
 class BlogPostSharedCategoriesExtension extends DataExtension
 {
-
     private static $categories_checkboxes = true;
 
     private static $tags_checkboxes = true;
@@ -39,7 +38,7 @@ class BlogPostSharedCategoriesExtension extends DataExtension
      */
     public function updateCMSFields(FieldList $fields)
     {
-        if(Config::inst()->get("BlogPostSharedCategoriesExtension", "categories_checkboxes") == true){
+        if (Config::inst()->get("BlogPostSharedCategoriesExtension", "categories_checkboxes") == true) {
             $fields->replaceField(
                 "Categories",
                 CheckboxSetField::create(
@@ -50,7 +49,7 @@ class BlogPostSharedCategoriesExtension extends DataExtension
                 )
             );
         }
-        if(Config::inst()->get("BlogPostSharedCategoriesExtension", "tags_checkboxes") == true){
+        if (Config::inst()->get("BlogPostSharedCategoriesExtension", "tags_checkboxes") == true) {
             $fields->replaceField(
                 "Tags",
                 CheckboxSetField::create(
