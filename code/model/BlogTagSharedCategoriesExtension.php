@@ -5,7 +5,10 @@
  */
 class BlogTagSharedCategoriesExtension extends DataExtension
 {
-
+    private static $summary_fields = array(
+        'Title' => 'Title',
+        'Blog.Title' => 'Belongs To'
+    );
 
     /**
      * overrules has_many method
@@ -35,17 +38,18 @@ class BlogTagSharedCategoriesExtension extends DataExtension
      */
     public function updateCMSFields(FieldList $fields)
     {
-        //called when creating a new tag from a grdifield - why??
-        /*$fields->replaceField(
-            "Categories",
-            CheckboxSetField::create(
-                'Categories',
-                _t('BlogPost.Categories', 'Categories'),
-                BlogCategory::get()->map("ID", "Title"),
-                $this->owner->Categories()
-            )
-        );      */
-
-        return $fields;
+        $pleaseSelectOne = _t(
+            'BlogTagSharedCategoriesExtension.PLEASE_SELECT_ONE',
+            '-- please select one --'
+        );
+        $fields->insertAfter(
+            DropDownField::create(
+                'BlogID',
+                'Show Under',
+                array(0 => $pleaseSelectOne)
+                    + Blog::get()->map()->toArray()
+            ),
+            'Title'
+        );
     }
 }

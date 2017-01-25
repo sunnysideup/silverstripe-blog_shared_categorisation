@@ -42,12 +42,14 @@ class BlogSharedCategoriesExtension extends DataExtension
      */
     public function UsedCategories()
     {
-        $categories = BlogCategory::get();
+        $categories = BlogCategory::get()
+            ->filter(array('BlogID' => $this->owner->ID));
         foreach ($categories as $category) {
             if ($category->BlogPosts()->count() == 0) {
                 $categories = $categories->exclude(array('BlogCategory.ID' => $category->ID));
             }
         }
+
         return $categories;
     }
 
@@ -79,7 +81,7 @@ class BlogSharedCategoriesExtension extends DataExtension
     {
         return BlogTag::get();
     }
-    
+
     /**
      * overrules has_many method
      * to return ALL categories
