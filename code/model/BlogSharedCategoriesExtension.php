@@ -43,7 +43,8 @@ class BlogSharedCategoriesExtension extends DataExtension
     public function UsedCategories()
     {
         $categories = BlogCategory::get()
-            ->filter(array('BlogID' => $this->owner->ID));
+            ->filter(array('BlogID' => $this->owner->ID))
+            ->sort(array('Title' => 'ASC'));
         foreach ($categories as $category) {
             if ($category->BlogPosts()->count() == 0) {
                 $categories = $categories->exclude(array('BlogCategory.ID' => $category->ID));
