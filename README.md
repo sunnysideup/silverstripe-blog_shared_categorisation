@@ -15,7 +15,7 @@
 
  * [Developer Docs](docs/en/INDEX.md)
  * [User Guide](docs/en/userguide.md)
- * [API](http://ssmods.com/apis/blog_shared_categorisation/docs/en/api/)
+ * [API Docs](http://docs.ssmods.com/sunnysideup/blog_shared_categorisation)
 
 ## Requirements
 
