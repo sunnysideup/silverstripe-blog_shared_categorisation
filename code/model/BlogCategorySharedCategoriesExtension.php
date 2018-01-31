@@ -9,7 +9,6 @@
 
 class BlogCategorySharedCategoriesExtension extends DataExtension
 {
-
     private static $summary_fields = array(
         'Title' => 'Title',
         'Blog.Title' => 'Belongs To'
@@ -35,5 +34,4 @@ class BlogCategorySharedCategoriesExtension extends DataExtension
             'Title'
         );
     }
-
 }
